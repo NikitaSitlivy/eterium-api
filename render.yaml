@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: eterium-api
+    env: node
+    plan: free
+    buildCommand: "npm ci"
+    startCommand: "npm start"
+    autoDeploy: true
+    healthCheckPath: "/ping"
+    envVars:
+      - key: NODE_ENV
+        value: production
